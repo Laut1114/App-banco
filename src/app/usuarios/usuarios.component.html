@@ -1,0 +1,40 @@
+<p style="font-weight: bold;">Tabla de clientes</p>
+<mat-table [dataSource]="usuarios" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="username">
+        <mat-header-cell *matHeaderCellDef>Nombre de Usuario</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.username}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="password">
+        <mat-header-cell *matHeaderCellDef>Contraseña</mat-header-cell>
+        <!-- <mat-cell *matCellDef="let row">{{row.password}}</mat-cell> -->
+        <mat-cell *matCellDef="let row">*************</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="avatar">
+        <mat-header-cell *matHeaderCellDef>Avatar</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.avatar}}--</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="rol">
+        <mat-header-cell *matHeaderCellDef>Rol</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.rol}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.email}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<br>
+<div class="container">
+    <button mat-raised-button style="background-color: #D6003D;" routerLink="/">Volver</button>
+</div>

@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+}
+
+.example-form {
+    background-color: #373737;
+    padding-top: 40px;
+    padding-right: 25%;
+    padding-bottom: 40px;
+    padding-left: 25%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+td {
+    padding-right: 8px;
+}
