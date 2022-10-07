@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TrasnsaccionesInterface } from '../models/transacciones';
+import { TrasnsaccionesInterface } from 'src/app/models/transacciones';
 
 @Component({
   selector: 'app-transacciones',

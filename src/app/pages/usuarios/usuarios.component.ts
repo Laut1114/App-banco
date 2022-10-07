@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UserInterface } from 'src/app/models/users';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from 'src/app/services/account/user.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -12,10 +13,18 @@ export class UsuariosComponent implements OnInit {
   displayedColumns: string[] = ['id', 'username',  'first_name', 'last_name', 'email', 'groups', 'date_joined'];
   usuarios: UserInterface[] = [];
 
-  constructor(private userService: UserService) { }
+  opcion: string = "";
+
+  constructor(private userService: UserService, private route: ActivatedRoute) { 
+    this.route.queryParams.subscribe(_params => {
+      this.opcion = _params['op'];
+    })
+  }
 
   ngOnInit(): void {
-    this.getUsers();
+    if (this.opcion == "1") {
+      this.getUsers()
+    }
   }
 
   getUsers() {
