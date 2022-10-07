@@ -14,11 +14,11 @@ export class ProductService {
   }
 
   addProduct(product: ProductsInterface) {
-    return this.http.post<any>('http://localhost:3000/api/products/add', product);
+    return this.http.post('http://localhost:3000/api/products/add', product);
   }
 
   updateProduct(id: number, product: ProductsInterface) {
-    return this.http.put<any>(`http://localhost:3000/api/products/update/${id}`, product);
+    return this.http.put(`http://localhost:3000/api/products/update/${id}`, product);
   }
 
   deleteProduct(id: number) {

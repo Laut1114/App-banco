@@ -16,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
+import { TransaccionesComponent } from './transacciones/transacciones.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MatInputModule } from '@angular/material/input';
     HomeComponent,
     ClientesComponent,
     ProductosComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    TransaccionesComponent
   ],
   imports: [
     BrowserModule,

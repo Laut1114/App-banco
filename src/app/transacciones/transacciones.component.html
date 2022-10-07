@@ -1,0 +1,35 @@
+<p style="font-weight: bold;">Tabla de clientes</p>
+<mat-table [dataSource]="transacciones" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="origen">
+        <mat-header-cell *matHeaderCellDef>Origen</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.origen}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="destino">
+        <mat-header-cell *matHeaderCellDef>Destino</mat-header-cell>
+        <!-- <mat-cell *matCellDef="let row">{{row.destino}}</mat-cell> -->
+        <mat-cell *matCellDef="let row">*************</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="cantidad">
+        <mat-header-cell *matHeaderCellDef>Cantidad</mat-header-cell>
+        <mat-cell *matCellDef="let row">$ {{row.cantidad}}--</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="fecha_realizada">
+        <mat-header-cell *matHeaderCellDef>Fecha Realizada</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.fecha_realizada}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<br>
+<div class="container">
+    <button mat-raised-button style="background-color: #D6003D;" routerLink="/">Volver</button>
+</div>

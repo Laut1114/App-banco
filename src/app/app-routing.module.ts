@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClientesComponent } from './clientes/clientes.component';
 import { HomeComponent } from './home/home.component';
 import { ProductosComponent } from './productos/productos.component';
+import { TransaccionesComponent } from './transacciones/transacciones.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 
 const routes: Routes = [
@@ -10,22 +11,26 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
-  {
-    path: 'clientes',
-    component: ClientesComponent,
-    // children: [
-    //   {
+  // {
+  //   path: 'clientes',
+  //   component: ClientesComponent,
+  //   children: [
+  //     {
 
-    //   }
-    // ]
-  },
-  {
-    path: 'productos',
-    component: ProductosComponent,
-  },
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: 'productos',
+  //   component: ProductosComponent,
+  // },
   {
     path: 'usuarios',
     component: UsuariosComponent,
+  },
+  {
+    path: 'transacciones',
+    component: TransaccionesComponent,
   }
 ];
 

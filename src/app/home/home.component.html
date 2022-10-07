@@ -1,5 +1,6 @@
-<p>Ejemplo Api Programacion II</p>
-<mat-card>
+<!-- <p>Bienvenido!! {{username}}</p> -->
+<p>Bienvenido!!</p>
+<!-- <mat-card>
     <mat-card-title>Productos</mat-card-title>
     <mat-card-subtitle>Ingresar a productos</mat-card-subtitle>
     <mat-card-actions align="end">
@@ -20,7 +21,7 @@
         <button mat-button color="warn" routerLink="">Eliminar</button>
     </mat-card-actions>
 </mat-card>
-<br>
+<br> -->
 <mat-card>
     <mat-card-title>Usuarios</mat-card-title>
     <mat-card-subtitle>Ingresar a usuarios</mat-card-subtitle>
@@ -29,5 +30,15 @@
         <button mat-button style="color: #7cb342;" routerLink="">Agregar</button>
         <button mat-button style="color: #ffc107;" routerLink="">Actualizar</button>
         <button mat-button color="warn" routerLink="">Eliminar</button>
+    </mat-card-actions>
+</mat-card>
+<br>
+<mat-card>
+    <mat-card-title>Transacciones</mat-card-title>
+    <mat-card-subtitle>Ingresar a transacciones</mat-card-subtitle>
+    <mat-card-actions align="end">
+        <button mat-button routerLink="/transacciones" [queryParams]="{op: '1'}">Obtener</button>
+        <button mat-button style="color: #7cb342;" routerLink="/transacciones" [queryParams]="{op: '2'}">Nueva transacción</button>
+        <button mat-button style="color: #ffc107;" routerLink="/transacciones" [queryParams]="{op: '3'}">Buscar</button>
     </mat-card-actions>
 </mat-card>

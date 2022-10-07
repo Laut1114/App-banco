@@ -5,30 +5,65 @@
         <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="username">
+    <!-- <ng-container matColumnDef="username">
         <mat-header-cell *matHeaderCellDef>Nombre de Usuario</mat-header-cell>
         <mat-cell *matCellDef="let row">{{row.username}}</mat-cell>
+    </ng-container> -->
+
+    <ng-container matColumnDef="first_name">
+        <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.first_name}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="password">
-        <mat-header-cell *matHeaderCellDef>Contraseña</mat-header-cell>
-        <!-- <mat-cell *matCellDef="let row">{{row.password}}</mat-cell> -->
-        <mat-cell *matCellDef="let row">*************</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="avatar">
-        <mat-header-cell *matHeaderCellDef>Avatar</mat-header-cell>
-        <mat-cell *matCellDef="let row">{{row.avatar}}--</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="rol">
-        <mat-header-cell *matHeaderCellDef>Rol</mat-header-cell>
-        <mat-cell *matCellDef="let row">{{row.rol}}</mat-cell>
+    <ng-container matColumnDef="last_name">
+        <mat-header-cell *matHeaderCellDef>Apellido</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.last_name}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="email">
         <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
         <mat-cell *matCellDef="let row">{{row.email}}</mat-cell>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="password">
+        <mat-header-cell *matHeaderCellDef>Contraseña</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.password}}</mat-cell>
+        <mat-cell *matCellDef="let row">*************</mat-cell>
+    </ng-container> -->
+
+    <ng-container matColumnDef="groups">
+        <mat-header-cell *matHeaderCellDef>Rol</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.groups}}</mat-cell>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="user_permissions">
+        <mat-header-cell *matHeaderCellDef>Permisos del usuario</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.user_permissions}}--</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="is_staff">
+        <mat-header-cell *matHeaderCellDef>Es staff</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.is_staff}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="is_active">
+        <mat-header-cell *matHeaderCellDef>Esta activo</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.is_active}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="is_superuser">
+        <mat-header-cell *matHeaderCellDef>Es superusuario</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.is_superuser}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="last_login">
+        <mat-header-cell *matHeaderCellDef>Ultimo login</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.last_login}}</mat-cell>
+    </ng-container> -->
+
+    <ng-container matColumnDef="date_joined">
+        <mat-header-cell *matHeaderCellDef>Fecha registro</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.date_joined}}</mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

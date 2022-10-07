@@ -11,6 +11,8 @@ export class ClientesComponent implements OnInit {
   displayedColumns: string[] = ['id', 'nombre', 'apellido', 'direccion', 'ciudad', 'telefono'];
   clientes: ClientInterface[] = [];
 
+  opcion: string = "";
+
   constructor(private clientService: ClientService) { }
 
   ngOnInit(): void {
