@@ -9,8 +9,12 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(user: UserInterface) {
-    return this.http.post<any>('http://localhost:3000/api/auth/login', user);
+  login(username: string, password: string) {
+    return this.http.post<any>('http://localhost:3000/api/auth/login', [username, password]);
+  }
+
+  register(user: UserInterface) {
+    return this.http.post<any>('http://localhost:3000/api/auth/register', user)
   }
 
 }

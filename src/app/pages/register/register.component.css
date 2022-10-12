@@ -1,12 +1,15 @@
 .container {
+    display: flexbox;
     width: fit-content;
-    background: linear-gradient(rgba(214, 0, 61), rgba(0, 0, 0, 0.5));
+    background-color: #d6003d;
+    background: linear-gradient(#d6003d, rgba(0, 0, 0, 0.5));
     border-radius: 10px;
     padding-top: 30px;
     padding-right: 30px;
     padding-left: 30px;
     padding-bottom: 30px;
 }
+
 
 mat-form-field {
     color: aliceblue;

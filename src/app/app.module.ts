@@ -18,6 +18,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { LoginComponent } from './pages/login/login.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRippleModule } from '@angular/material/core';
+import { RegisterComponent } from './pages/register/register.component';
 
 
 @NgModule({
@@ -26,7 +31,8 @@ import { LoginComponent } from './pages/login/login.component';
     HomeComponent,
     UsuariosComponent,
     TransaccionesComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,10 @@ import { LoginComponent } from './pages/login/login.component';
     MatButtonModule,
     MatCardModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,65 @@
+<div class="container">
+    <p style="font-family: monospace; color:rgb(255, 255, 255); font-size: x-large;">Registro de cuenta</p>
+    <p style="font-family: monospace; color: rgb(186, 186, 186)">Por favor complete los siguientes datos.</p>
+    <br>
+    <form class="example-form" [formGroup]="formRegister">
+        <tr>
+            <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-label>Nombre se usuario</mat-label>
+                <input matInput formControlName="username" required>
+            </mat-form-field>
+        </tr>
+        <tr>
+            <mat-form-field appearance="outline" style="padding-right: 8px; width: 40%;">
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="first_name">
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="padding-right: 8px; width: 40%;">
+                <mat-label>Apellido</mat-label>
+                <input matInput formControlName="last_name">
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="width: 17%;">
+                <mat-label>Rol</mat-label>
+                <input matInput placeholder="Cliente" formControlName="groups" required>
+            </mat-form-field>
+        </tr>
+        <tr>
+            <mat-form-field appearance="outline" style="padding-right: 8px; width: 53%;">
+                <mat-label>Enter your email</mat-label>
+                <input matInput formControlName="email" placeholder="pat@example.com">
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="width: 45%;">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </tr>
+        <tr>
+            <mat-form-field appearance="outline" style="padding-right: 8px; width: 47%;">
+                <mat-label>Permisos del usuario</mat-label>
+                <input matInput formControlName="user_permissions" placeholder="Usuario" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="padding-right: 8px; width: 25%;">
+                <mat-label>Es staff</mat-label>
+                <mat-select formControlName="is_staff" [value]="false">
+                    <mat-option value="true">Si</mat-option>
+                    <mat-option value="false">No</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="width: 25%;">
+                <mat-label>Es super-usuario</mat-label>
+                <mat-select formControlName="is_root" [value]="false">
+                    <mat-option value="true">Si</mat-option>
+                    <mat-option value="false">No</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </tr>
+    </form>
+    <br>
+    <div class="container-button">
+        <button mat-raised-button style="background-color: #4e4e4e; width: 50%;" routerLink="/home" [disabled]="formRegister.invalid">Crear usuario</button>
+        <button mat-button style="color: #ffffff" routerLink="/">Ya tengo cuenta</button>
+    </div>
+</div>
