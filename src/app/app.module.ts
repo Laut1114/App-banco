@@ -21,7 +21,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
-import { MatRippleModule } from '@angular/material/core';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { RegisterComponent } from './pages/register/register.component';
 
 
@@ -48,6 +48,7 @@ import { RegisterComponent } from './pages/register/register.component';
     MatIconModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

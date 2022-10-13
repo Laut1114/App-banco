@@ -1,7 +1,7 @@
 import { Component, OnInit, Type } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserInterface } from 'src/app/models/users';
-import { AuthService } from 'src/app/services/auth/auth.service';
+import { UserService } from 'src/app/services/account/user.service';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   formRegister!: FormGroup;
   user: UserInterface[] = [];
 
-  constructor(private registerService: AuthService, private fb: FormBuilder) { 
+  constructor(private registerService: UserService, private fb: FormBuilder) { 
     this.formRegister = this.fb.group({
       username: ['', Validators.required],
       first_name: [''],
@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   register(user: UserInterface) {
-    this.registerService.register(user).subscribe(() => {
+    this.registerService.addUser(user).subscribe(() => {
       console.log("listo")
     })
   }

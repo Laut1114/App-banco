@@ -1,11 +1,13 @@
+<br>
 <mat-card>
     <mat-card-title>Usuarios</mat-card-title>
     <mat-card-subtitle>Ingresar a usuarios</mat-card-subtitle>
     <mat-card-actions align="end">
-        <button mat-button routerLink="/usuarios" [queryParams]="{op: '1'}">Obtener</button>
-        <button mat-button style="color: #7cb342;" routerLink="/usuarios" [queryParams]="{op: '2'}">Agregar</button>
-        <button mat-button style="color: #ffc107;" routerLink="" [queryParams]="{op: '3'}">Actualizar</button>
-        <button mat-button color="warn" routerLink="">Eliminar</button>
+        <button mat-button routerLink="/usuarios" [queryParams]="{op: '1'}">Lista de usuarios</button>
+        <button mat-button routerLink="/usuarios" [queryParams]="{op: '2'}">Buscar usuario</button>
+        <button mat-button style="color: #7cb342;" routerLink="/usuarios" [queryParams]="{op: '3'}">Agregar usuario</button>
+        <button mat-button style="color: #ffc107;" routerLink="/usuarios" [queryParams]="{op: '4'}">Actualizar datos del usuario</button>
+        <button mat-button color="warn" routerLink="/usuarios" [queryParams]="{op: '5'}">Eliminar usuario</button>
     </mat-card-actions>
 </mat-card>
 <br>
@@ -13,8 +15,8 @@
     <mat-card-title>Transacciones</mat-card-title>
     <mat-card-subtitle>Ingresar a transacciones</mat-card-subtitle>
     <mat-card-actions align="end">
-        <button mat-button routerLink="/transacciones" [queryParams]="{op: '1'}">Obtener</button>
+        <button mat-button routerLink="/transacciones" [queryParams]="{op: '1'}">Lista de transacciones</button>
         <button mat-button style="color: #7cb342;" routerLink="/transacciones" [queryParams]="{op: '2'}">Nueva transacción</button>
-        <button mat-button style="color: #ffc107;" routerLink="/transacciones" [queryParams]="{op: '3'}">Buscar</button>
+        <button mat-button style="color: #ffc107;" routerLink="/transacciones" [queryParams]="{op: '3'}">Buscar transacción</button>
     </mat-card-actions>
 </mat-card>

@@ -13,8 +13,4 @@ export class AuthService {
     return this.http.post<any>('http://localhost:3000/api/auth/login', [username, password]);
   }
 
-  register(user: UserInterface) {
-    return this.http.post<any>('http://localhost:3000/api/auth/register', user)
-  }
-
 }

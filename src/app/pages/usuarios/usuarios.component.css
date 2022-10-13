@@ -6,3 +6,21 @@ table {
     display: flex;
     justify-content: flex-end;
 }
+
+mat-form-field {
+    color: aliceblue;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: rgb(255, 255, 255);
+}
+
+mat-label {
+    color: aliceblue;
+}
+
+.container-button button{
+    width: 100%;
+    background-color: #ffffff; 
+    color: black; 
+}

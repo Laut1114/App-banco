@@ -20,7 +20,7 @@
             </mat-form-field>
             <mat-form-field appearance="outline" style="width: 17%;">
                 <mat-label>Rol</mat-label>
-                <input matInput placeholder="Cliente" formControlName="groups" required>
+                <input matInput placeholder="Cliente" formControlName="groups">
             </mat-form-field>
         </tr>
         <tr>
@@ -59,7 +59,7 @@
     </form>
     <br>
     <div class="container-button">
-        <button mat-raised-button style="background-color: #4e4e4e; width: 50%;" routerLink="/home" [disabled]="formRegister.invalid">Crear usuario</button>
+        <button mat-raised-button style="background-color: #4e4e4e; width: 50%;" routerLink="/home" [disabled]="formRegister.invalid" (click)="register(formRegister.value)">Crear usuario</button>
         <button mat-button style="color: #ffffff" routerLink="/">Ya tengo cuenta</button>
     </div>
 </div>
