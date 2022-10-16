@@ -52,12 +52,8 @@ p {
 }
 
 .content {
-    display: flexbox;
-    margin: 82px auto 32px;
+    margin: 150px auto 32px;
     padding: 0 16px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     max-width: 70%;
 }
 
@@ -73,37 +69,7 @@ svg.material-icons:not(:last-child) {
 svg#clouds {
     position: fixed;
     bottom: -160px;
-    left: -230px;
+    left: -10px;
     z-index: -10;
     width: 1920px;
 }
-
-/* Responsive Styles */
-/* @media screen and (max-width: 767px) {
-
-    .card-container>*:not(.circle-link),
-    .terminal {
-        width: 100%;
-    }
-
-    .card:not(.highlight-card) {
-        height: 16px;
-        margin: 8px 0;
-    }
-
-    .card.highlight-card span {
-        margin-left: 72px;
-    }
-
-    svg#rocket-smoke {
-        right: 120px;
-        transform: rotate(-5deg);
-    }
-}
-
-@media screen and (max-width: 575px) {
-    svg#rocket-smoke {
-        display: none;
-        visibility: hidden;
-    }
-} */

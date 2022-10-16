@@ -6,7 +6,7 @@
         <tr>
             <mat-form-field appearance="outline" style="width: 100%;">
                 <mat-label>Nombre se usuario</mat-label>
-                <input matInput formControlName="username" required>
+                <input matInput formControlName="username">
             </mat-form-field>
         </tr>
         <tr>
@@ -20,7 +20,11 @@
             </mat-form-field>
             <mat-form-field appearance="outline" style="width: 17%;">
                 <mat-label>Rol</mat-label>
-                <input matInput placeholder="Cliente" formControlName="groups">
+                <mat-select formControlName="groups">
+                    <mat-option style="color: whitesmoke;" value="cliente">Cliente</mat-option>
+                    <mat-option style="color: whitesmoke;" value="empleado">Empleado</mat-option>
+                    <mat-option style="color: whitesmoke;" value="gerente">Gerente</mat-option>
+                </mat-select>
             </mat-form-field>
         </tr>
         <tr>
@@ -30,7 +34,7 @@
             </mat-form-field>
             <mat-form-field appearance="outline" style="width: 45%;">
                 <mat-label>Enter your password</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
@@ -39,27 +43,31 @@
         <tr>
             <mat-form-field appearance="outline" style="padding-right: 8px; width: 47%;">
                 <mat-label>Permisos del usuario</mat-label>
-                <input matInput formControlName="user_permissions" placeholder="Usuario" required>
+                <mat-select formControlName="user_permissions">
+                    <mat-option style="color: whitesmoke;" value="usuario">Usuario</mat-option>
+                    <mat-option style="color: whitesmoke;" value="invitado">Invitado</mat-option>
+                    <mat-option style="color: whitesmoke;" value="admin">Administrador</mat-option>
+                </mat-select>
             </mat-form-field>
             <mat-form-field appearance="outline" style="padding-right: 8px; width: 25%;">
                 <mat-label>Es staff</mat-label>
                 <mat-select formControlName="is_staff" [value]="false">
-                    <mat-option value="true">Si</mat-option>
-                    <mat-option value="false">No</mat-option>
+                    <mat-option style="color: whitesmoke;" value="true">Si</mat-option>
+                    <mat-option style="color: whitesmoke;" value="false">No</mat-option>
                 </mat-select>
             </mat-form-field>
             <mat-form-field appearance="outline" style="width: 25%;">
                 <mat-label>Es super-usuario</mat-label>
                 <mat-select formControlName="is_root" [value]="false">
-                    <mat-option value="true">Si</mat-option>
-                    <mat-option value="false">No</mat-option>
+                    <mat-option style="color: whitesmoke;" value="true">Si</mat-option>
+                    <mat-option style="color: whitesmoke;" value="false">No</mat-option>
                 </mat-select>
             </mat-form-field>
         </tr>
     </form>
     <br>
     <div class="container-button">
-        <button mat-raised-button style="background-color: #4e4e4e; width: 50%;" routerLink="/home" [disabled]="formRegister.invalid" (click)="register(formRegister.value)">Crear usuario</button>
+        <button mat-raised-button style="background-color: #4e4e4e; width: 50%;" [disabled]="formRegister.invalid" (click)="register(formRegister.value)">Crear usuario</button>
         <button mat-button style="color: #ffffff" routerLink="/">Ya tengo cuenta</button>
     </div>
 </div>

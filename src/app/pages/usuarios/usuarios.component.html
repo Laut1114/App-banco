@@ -39,7 +39,7 @@
 
         <ng-container matColumnDef="date_joined">
             <mat-header-cell *matHeaderCellDef>Fecha registro</mat-header-cell>
-            <mat-cell *matCellDef="let row">{{row.date_joined}}</mat-cell>
+            <mat-cell *matCellDef="let row">{{row.date_joined | date: 'd/M/y - h:mm:ss a' : 'GMT-3'}}</mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -70,8 +70,8 @@
             <button mat-raised-button (click)="getUser(formUser.value.id)">Buscar</button>
         </div>
     </form>
-
-    <div *ngIf="usuario.length >= 1">
+    <br>
+    <div *ngIf="usuario.length > 0">
         <p style="font-weight: bold;">Usuario</p>
         <mat-table [dataSource]="usuario" class="mat-elevation-z8">
             <ng-container matColumnDef="id">
@@ -111,7 +111,7 @@
 
             <ng-container matColumnDef="date_joined">
                 <mat-header-cell *matHeaderCellDef>Fecha registro</mat-header-cell>
-                <mat-cell *matCellDef="let row">{{row.date_joined}}</mat-cell>
+                <mat-cell *matCellDef="let row">{{row.date_joined | date: 'd/M/y - h:mm:ss a' : 'GMT-3'}}</mat-cell>
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -134,7 +134,7 @@
                 <tr>
                     <mat-form-field appearance="outline" style="width: 100%;">
                         <mat-label>Nombre se usuario</mat-label>
-                        <input matInput formControlName="username" required>
+                        <input matInput formControlName="username">
                     </mat-form-field>
                 </tr>
                 <tr>
@@ -148,7 +148,11 @@
                     </mat-form-field>
                     <mat-form-field appearance="outline" style="width: 18.5%;">
                         <mat-label>Rol</mat-label>
-                        <input matInput placeholder="Cliente" formControlName="groups">
+                        <mat-select formControlName="groups">
+                            <mat-option style="color: whitesmoke;" value="cliente">Cliente</mat-option>
+                            <mat-option style="color: whitesmoke;" value="empleado">Empleado</mat-option>
+                            <mat-option style="color: whitesmoke;" value="gerente">Gerente</mat-option>
+                        </mat-select>
                     </mat-form-field>
                 </tr>
                 <tr>
@@ -158,7 +162,7 @@
                     </mat-form-field>
                     <mat-form-field appearance="outline" style="width: 44%;">
                         <mat-label>Password</mat-label>
-                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-pressed]="hide">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
@@ -167,7 +171,11 @@
                 <tr>
                     <mat-form-field appearance="outline" style="padding-right: 8px; width: 48.5%;">
                         <mat-label>Permisos del usuario</mat-label>
-                        <input matInput formControlName="user_permissions" placeholder="Usuario" required>
+                        <mat-select formControlName="user_permissions">
+                            <mat-option style="color: whitesmoke;" value="usuario">Usuario</mat-option>
+                            <mat-option style="color: whitesmoke;" value="invitado">Invitado</mat-option>
+                            <mat-option style="color: whitesmoke;" value="admin">Administrador</mat-option>
+                        </mat-select>
                     </mat-form-field>
                     <mat-form-field appearance="outline" style="padding-right: 8px; width: 25%;">
                         <mat-label>Es staff</mat-label>
@@ -207,11 +215,11 @@
                 <tr>
                     <mat-form-field appearance="outline" style="padding-right: 8px; width: 13%;">
                         <mat-label>Id del usuario</mat-label>
-                        <input matInput type="number" formControlName="id" required>
+                        <input matInput type="number" formControlName="id">
                     </mat-form-field>
                     <mat-form-field appearance="outline" style="width: 86%;">
                         <mat-label>Nombre se usuario</mat-label>
-                        <input matInput formControlName="username" required>
+                        <input matInput formControlName="username">
                     </mat-form-field>
                 </tr>
                 <tr>
@@ -235,7 +243,7 @@
                     </mat-form-field>
                     <mat-form-field appearance="outline" style="width: 44%;">
                         <mat-label>Password</mat-label>
-                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-pressed]="hide">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
@@ -244,7 +252,11 @@
                 <tr>
                     <mat-form-field appearance="outline" style="padding-right: 8px; width: 48.5%;">
                         <mat-label>Permisos del usuario</mat-label>
-                        <input matInput formControlName="user_permissions" placeholder="Usuario" required>
+                        <mat-select formControlName="user_permissions">
+                            <mat-option style="color: whitesmoke;" value="usuario">Usuario</mat-option>
+                            <mat-option style="color: whitesmoke;" value="invitado">Invitado</mat-option>
+                            <mat-option style="color: whitesmoke;" value="admin">Administrador</mat-option>
+                        </mat-select>
                     </mat-form-field>
                     <mat-form-field appearance="outline" style="padding-right: 8px; width: 25%;">
                         <mat-label>Es staff</mat-label>

@@ -14,7 +14,7 @@ export class UserService {
   }
 
   getUser(id: number) {
-    return this.http.get<any>(`http://localhost:3000/api/accounts/accounts/${id}`);
+    return this.http.get<any>(`http://localhost:3000/api/accounts/${id}`);
   }
 
   addUser(user: UserInterface) {

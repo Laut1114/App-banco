@@ -23,7 +23,7 @@
     </form>
     <br>
     <div class="container-button">
-        <button type="submit" [disabled]="!formLogin.valid" mat-raised-button style="background-color: #4e4e4e; width: 50%;" routerLink="/home" (click)="login(formLogin.value.username, formLogin.value.password)">Ingresar</button>
+        <button type="submit" [disabled]="!formLogin.valid" mat-raised-button style="background-color: #4e4e4e; width: 50%;" (click)="login(formLogin.value.username, formLogin.value.password)">Ingresar</button>
         <button mat-button style="color: #ffffff" routerLink="/register">Registrarse</button>
     </div>
 </div>
