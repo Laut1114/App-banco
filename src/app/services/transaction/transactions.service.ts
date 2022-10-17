@@ -18,8 +18,8 @@ export class TransactionsService {
     return this.http.get<any>(`http://localhost:3000/api/transactions/${id}`);
   }
 
-  newTrasaction(origen: UserInterface, destino: UserInterface, cantidad: number) {
-    return this.http.post<any>('http://localhost:3000/api/transaction/new', [origen, destino, cantidad]);
+  newTrasaction(transaction: TrasnsaccionesInterface) {
+    return this.http.post<any>('http://localhost:3000/api/transactions/new', transaction);
   }
 
 }

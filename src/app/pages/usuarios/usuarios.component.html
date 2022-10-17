@@ -307,7 +307,7 @@
         </div>
         <ng-template #formValid>
             <div class="container-button-valid">
-                <button mat-raised-button (click)="updateUser(formUser.value.id, formUser.value)" routerLink="/home">Actualizar</button>
+                <button mat-raised-button routerLink="/home" (click)="updateUser(formUser.value.id, formUser.value)">Actualizar</button>
             </div>
         </ng-template>
     </div>
@@ -320,26 +320,32 @@
 </div>
 
 <!-------------------------------------------------------------------------------- OPCION 5 - ELIMINAR A UN USUARIO ----------------------------------------------------------------------------------->
-<!-- <div *ngIf="opcion[0] == '5'">
-    <p class="p-title">Eliminar un Usuario</p>
-    <form class="example-form mat-elevation-z8" [formGroup]="formUser"
-        style="background-color: #474747; padding: 30px; border-radius: 12px;">
-        <table class="example-full-width" cellspacing="1">
-            <tr>
-                <mat-form-field appearance="outline" style="width: 100%;">
-                    <mat-label>Id del usuario</mat-label>
-                    <mat-hint>*Por favor ingrese el ID del usuario que desea eliminar</mat-hint>
-                    <input matInput formControlName="id" required>
-                </mat-form-field>
-            </tr>
-        </table>
+<div *ngIf="opcion[0] == '5'">
+    <div class="example-form mat-elevation-z8" style="background-color: #474747; padding: 30px; border-radius: 12px;">
+        <p class="p-title">Eliminar un Usuario</p>
+        <form [formGroup]="formUser">
+            <table class="example-full-width" cellspacing="1">
+                <tr>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>Id del usuario</mat-label>
+                        <mat-hint>*Por favor ingrese el ID del usuario que desea eliminar</mat-hint>
+                        <input matInput formControlName="id" required>
+                    </mat-form-field>
+                </tr>
+            </table>
+        </form>
         <br>
-        <div>
-            <button mat-raised-button style="width: 100%; background-color: #ff0000c9; color: rgb(3, 3, 3); " (click)="deleteUser(formUser.value.id)">Eliminar</button>
+        <div *ngIf="formUser.invalid; else formValid">
+            <button mat-raised-button style="width: 100%; background-color: #fc0b0b57; color: rgba(255, 255, 255, 0.37);" disabled>Eliminar</button>
         </div>
-    </form>
-    <br>
+        <ng-template #formValid>
+            <button mat-raised-button style="width: 100%; background-color: #ff0000c9; color: #fff;" routerLink="/home" (click)="deleteUser(formUser.value.id)">Eliminar</button>
+        </ng-template>
+    </div>
+
+    <div class="spacer"></div>
+    
     <div class="container">
         <button mat-raised-button style="background-color: #D6003D;" routerLink="/home">Volver</button>
     </div>
-</div> -->
+</div>

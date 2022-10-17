@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { UserInterface } from 'src/app/models/users';
@@ -99,14 +99,52 @@ export class UsuariosComponent implements OnInit {
   }
 
   updateUser(id: number, user: UserInterface) {
-    this.userService.updateUser(id, user).subscribe(() => {
-      alert('listo');
+    this.userService.updateUser(id, user).subscribe({
+      next: () => {
+        this.snackBar.open("Usuario " + id + " actualizado correctamente", undefined, {
+          duration: 4500,
+          horizontalPosition: this.snackBarHorizontal,
+          verticalPosition: this.snackBarVertical,
+          panelClass: ['back-color']
+        });
+
+        this.formUser.reset();
+        
+      }, error: (err) => {
+
+        console.log(err);
+
+        this.snackBar.open("Algo salio mal y no se pudo actualizar el usuario", "Probar denuevo", {
+          horizontalPosition: this.snackBarHorizontal,
+          verticalPosition: this.snackBarVertical,
+          panelClass: ['back-color']
+        });
+      }
     });
   }
 
   deleteUser(id: number) {
-    this.userService.deleteUser(id).subscribe(() => {
-      alert('listo');
+    this.userService.deleteUser(id).subscribe({
+      next: () => {
+        this.snackBar.open("Usuario " + id + " eliminado correctamente", undefined, {
+          duration: 4500,
+          horizontalPosition: this.snackBarHorizontal,
+          verticalPosition: this.snackBarVertical,
+          panelClass: ['back-color']
+        });
+
+        this.formUser.reset();
+        
+      }, error: (err) => {
+
+        console.log(err);
+
+        this.snackBar.open("Algo salio mal y no se pudo eliminar el usuario", "Probar denuevo", {
+          horizontalPosition: this.snackBarHorizontal,
+          verticalPosition: this.snackBarVertical,
+          panelClass: ['back-color']
+        });
+      }
     });
   }
 }

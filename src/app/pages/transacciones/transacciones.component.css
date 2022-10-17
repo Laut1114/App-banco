@@ -2,6 +2,17 @@ table {
     width: 100%;
 }
 
+.spacer {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.p-title {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: larger;
+}
+
 .container {
     display: flex;
     justify-content: flex-end;
@@ -20,8 +31,14 @@ mat-label {
     color: aliceblue;
 }
 
-.container-button button{
+.container-button button {
     width: 100%;
-    background-color: #ffffff; 
-    color: black; 
+    background-color: #717171;
+    color: rgb(255, 255, 255);
+}
+
+.container-button-valid button {
+    width: 100%;
+    background-color: #ffffff;
+    color: black;
 }
