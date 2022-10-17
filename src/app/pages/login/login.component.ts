@@ -46,8 +46,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/home']);
       },
       error: () => {
-        this.snackBar.open("Datos incorrectos", undefined, {
-          duration: 3500,
+        this.snackBar.open("Datos incorrectos", "Cerrar", {
           horizontalPosition: this.snackBarHorizontal,
           verticalPosition: this.snackBarVertical,
           panelClass: ['back-color']

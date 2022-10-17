@@ -2,17 +2,17 @@
     <p style="font-family: monospace; color:rgb(255, 255, 255); font-size: x-large;">Bienvenido!!</p>
     <p style="font-family: monospace; color: rgb(186, 186, 186)">Ingrese sus datos para continuar.</p>
     <br>
-    <form class="example-form" [formGroup]="formLogin">
+    <form [formGroup]="formLogin">
         <tr>
             <mat-form-field appearance="outline" style="width: 100%;">
                 <mat-label>Nombre se usuario</mat-label>
-                <input matInput formControlName="username" required>
+                <input matInput formControlName="username">
             </mat-form-field>
         </tr>
         <tr>
             <mat-form-field appearance="outline" style="width: 100%;">
                 <mat-label>Enter your password</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                     [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -23,7 +23,7 @@
     </form>
     <br>
     <div class="container-button">
-        <button type="submit" [disabled]="!formLogin.valid" mat-raised-button style="background-color: #4e4e4e; width: 50%;" (click)="login(formLogin.value.username, formLogin.value.password)">Ingresar</button>
+        <button [disabled]="!formLogin.valid" mat-raised-button style="background-color: #4e4e4e; width: 50%;" (click)="login(formLogin.value.username, formLogin.value.password)">Ingresar</button>
         <button mat-button style="color: #ffffff" routerLink="/register">Registrarse</button>
     </div>
 </div>

@@ -20,25 +20,30 @@ export class UsuariosComponent implements OnInit {
   usuario: UserInterface[] = [];
 
   hide: boolean = true;
+
   opcion: string = "";
+
   formUser!: FormGroup;
 
-  constructor(private userService: UserService, fb: FormBuilder, private route: ActivatedRoute, private snackBar: MatSnackBar) { 
-    this.route.queryParams.subscribe(_params => {
-      this.opcion = _params['op'];
-    });
+  _token: any;
+  router: any;
 
-    this.formUser = fb.group({
-      id: ['', Validators.required],
-      username: ['', Validators.required],
+  constructor(private userService: UserService, private fb: FormBuilder, private route: ActivatedRoute, private snackBar: MatSnackBar) { 
+    this.formUser = this.fb.group({
+      id: [''],
+      username: [''],
       first_name: [''],
       last_name: [''],
-      groups: ['', Validators.required],
+      groups: ['cliente'],
       email: [''],
-      password: ['', Validators.required],
-      user_permissions: ['', Validators.required],
-      is_staff: ['false', Validators.required],
-      is_root: ['false', Validators.required]
+      password: [''],
+      user_permissions: ['usuario'],
+      is_staff: ['false'],
+      is_root: ['false']
+    });
+    
+    this.route.queryParams.subscribe(_params => {
+      this.opcion = _params['op'];
     });
   }
 
