@@ -18,6 +18,11 @@ table {
     justify-content: flex-end;
 }
 
+.container button {
+    background-color: #F0F8FF; 
+    color: #182848;
+}
+
 mat-form-field {
     color: aliceblue;
 }
@@ -38,6 +43,6 @@ mat-label {
 
 .container-button-valid button {
     width: 100%;
-    background-color: #ffffff;
-    color: black;
+    background-color: #2c3968;
+    color: #F0F8FF;
 }

@@ -1,25 +1,27 @@
-<div class="container">
-    <p style="font-family: monospace; color:rgb(255, 255, 255); font-size: x-large;">Bienvenido!!</p>
-    <p style="font-family: monospace; color: rgb(186, 186, 186)">Ingrese sus datos para continuar.</p>
+<div class="mat-elevation-z8" id="container">
+    <p style="color: aliceblue; font-size: x-large;">Bienvenido!!</p>
+    <p style="color: aliceblue">Ingrese sus datos para continuar.</p>
     <br>
     <form [formGroup]="formLogin">
-        <tr>
-            <mat-form-field appearance="outline" style="width: 100%;">
-                <mat-label>Nombre se usuario</mat-label>
-                <input matInput formControlName="username">
-            </mat-form-field>
-        </tr>
-        <tr>
-            <mat-form-field appearance="outline" style="width: 100%;">
-                <mat-label>Enter your password</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                    [attr.aria-pressed]="hide">
-                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button>
-                <mat-hint>*Debe tener mas de 8 caracteres</mat-hint>
-            </mat-form-field>
-        </tr>
+        <table>
+            <tr>
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Nombre se usuario</mat-label>
+                    <input matInput formControlName="username">
+                </mat-form-field>
+            </tr>
+            <tr>
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-hint>*Debe tener mas de 8 caracteres</mat-hint>
+                </mat-form-field>
+            </tr>
+        </table>
     </form>
     <br>
     <div class="container-button">

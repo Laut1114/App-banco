@@ -1,11 +1,15 @@
-.container {
-    width: fit-content;
-    background: linear-gradient(rgba(214, 0, 61), rgba(0, 0, 0, 0.5));
+#container {
+    display: flexbox;
+    flex: wrap;
+    width: 40%;
+    background: linear-gradient(180deg, #4b6cb7 0%, #182848 100%);
     border-radius: 10px;
-    padding-top: 30px;
-    padding-right: 30px;
-    padding-left: 30px;
-    padding-bottom: 30px;
+    padding: 30px;
+}
+
+
+table {
+    width: 100%;
 }
 
 mat-form-field {

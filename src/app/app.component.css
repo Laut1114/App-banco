@@ -46,11 +46,6 @@ p {
     margin: 0 16px;
 }
 
-.mat-button-wrapper {
-    color: #333;
-    
-}
-
 .content {
     margin: 120px auto 32px;
     padding: 0 16px;
@@ -69,7 +64,9 @@ svg.material-icons:not(:last-child) {
 svg#clouds {
     position: fixed;
     bottom: -160px;
-    left: -10px;
-    z-index: -10;
+    left: 0px;
+    z-index: -10px;
     width: 1920px;
+    height: 35%;
+    opacity: 0.4;
 }

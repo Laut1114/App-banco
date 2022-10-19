@@ -1,7 +1,7 @@
 <!-------------------------------------------------------------------------------- OPCION 1 - LISTAR TRASANCCIONES --------------------------------------------------------------------------------->
 <div *ngIf="opcion[0] == '1'">
-    <p style="font-weight: bold;">Lista de transacciones</p>
-
+    <p style="color: #F0F8FF; font-weight: bold; font-size: larger;">Lista de transacciones</p>
+    <br>
     <mat-table [dataSource]="transacciones" class="mat-elevation-z8">
         <ng-container matColumnDef="id">
             <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
@@ -32,10 +32,10 @@
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
 
-    <br>
+    <div class="spacer"></div>
 
     <div class="container">
-        <button mat-raised-button style="background-color: #D6003D;" routerLink="/home">Volver</button>
+        <button mat-raised-button routerLink="/home">Volver</button>
     </div>
 </div>
 
@@ -99,7 +99,7 @@
     <div class="spacer"></div>
 
     <div class="container">
-        <button mat-raised-button style="background-color: #D6003D;" routerLink="/home">Volver</button>
+        <button mat-raised-button routerLink="/home">Volver</button>
     </div>
 </div>
 
@@ -166,7 +166,9 @@
         </mat-table>
     </div>
 
+    <div class="spacer"></div>
+
     <div class="container">
-        <button mat-raised-button style="background-color: #D6003D;" routerLink="/home">Volver</button>
+        <button mat-raised-button routerLink="/home">Volver</button>
     </div>
 </div>

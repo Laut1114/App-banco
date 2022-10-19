@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
         this.snackBar.open("Datos incorrectos", "Cerrar", {
           horizontalPosition: this.snackBarHorizontal,
           verticalPosition: this.snackBarVertical,
-          panelClass: ['back-color']
+          panelClass: ['back-color-err']
         });
       }
     });

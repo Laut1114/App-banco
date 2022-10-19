@@ -1,5 +1,26 @@
 mat-card {
     max-width: 100%;
+    background: linear-gradient(260deg, #4b6cb7 0%, #182848 100%);
+    color: #F0F8FF;
+}
+
+mat-card-subtitle {
+    color: #F0F8FF;
+}
+
+.spacer {
+    height: 50px;
+}
+
+.container-buttons-card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-buttons-card button {
+    margin-right: 8px;
+    margin-top: 8px;
+    background-color: #2c3968;
 }
 
 p {

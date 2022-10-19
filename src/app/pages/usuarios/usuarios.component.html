@@ -1,6 +1,7 @@
 <!-------------------------------------------------------------------------------- OPCION 1 - LISTAR USUARIOS --------------------------------------------------------------------------------->
 <div *ngIf="opcion[0] == '1'">
-    <p style="color: #000; font-weight: bold; font-size: larger;">Tabla de clientes</p>
+    <p style="color: #F0F8FF; font-weight: bold; font-size: larger;">Tabla de clientes</p>
+    <br>
     <mat-table [dataSource]="usuarios" class="mat-elevation-z8">
         <ng-container matColumnDef="id">
             <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
@@ -49,7 +50,7 @@
     <div class="spacer"></div>
 
     <div class="container">
-        <button mat-raised-button style="background-color: #D6003D;" routerLink="/home">Volver</button>
+        <button mat-raised-button style="background-color: #F0F8FF; color: #182848;" routerLink="/home">Volver</button>
     </div>
 </div>
 
@@ -85,7 +86,7 @@
     <div class="spacer"></div>
     <!-- TABLA CON LOS DATOS DEL USUARIO ENCONTRADO CON EL ID -->
     <div *ngIf="usuario.length > 0">
-        <p class="p-title" style="color: #000;">Usuario</p>
+        <p class="p-title" style="color: #F0F8FF;">Usuario</p>
         <mat-table [dataSource]="usuario" class="mat-elevation-z8">
             <ng-container matColumnDef="id">
                 <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
@@ -135,7 +136,7 @@
     <div class="spacer"></div>
 
     <div class="container">
-        <button mat-raised-button style="background-color: #D6003D;" routerLink="/home">Volver</button>
+        <button mat-raised-button routerLink="/home">Volver</button>
     </div>
 </div>
 
@@ -225,7 +226,7 @@
     <div class="spacer"></div>
 
     <div class="container">
-        <button mat-raised-button style="background-color: #D6003D;" routerLink="/home">Volver</button>
+        <button mat-raised-button routerLink="/home">Volver</button>
     </div>
 </div>
 
@@ -315,7 +316,7 @@
     <div class="spacer"></div>
 
     <div class="container">
-        <button mat-raised-button style="background-color: #D6003D;" routerLink="/home">Volver</button>
+        <button mat-raised-button routerLink="/home">Volver</button>
     </div>
 </div>
 
@@ -346,6 +347,6 @@
     <div class="spacer"></div>
     
     <div class="container">
-        <button mat-raised-button style="background-color: #D6003D;" routerLink="/home">Volver</button>
+        <button mat-raised-button routerLink="/home">Volver</button>
     </div>
 </div>

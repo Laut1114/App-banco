@@ -1,10 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* html, body { height: 100%; width: 100%; } */
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body { 
+    height: 100%; 
+    margin: 0;
+    font-family: monospace;
+    background-image: linear-gradient( 0deg,  rgba(39,103,187,1) 10.4%, rgba(16,72,144,1) 87.7% );
+}
 
 /* SNACK BARS COLORS  */
 .back-color {
-    background-color: rgba(214, 0, 61);
-    color: aliceblue;
+    background-color: #F0F8FF;
+    color: #13274F;
+}
+
+.back-color-err {
+    background-color: #f72f72;
+    color: #F0F8FF;
 }
