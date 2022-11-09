@@ -2,16 +2,15 @@
 
 html,
 body { 
-    height: 100%; 
+    height: 100%;
     margin: 0;
-    font-family: monospace;
-    background-image: linear-gradient( 0deg,  rgba(39,103,187,1) 10.4%, rgba(16,72,144,1) 87.7% );
+    background-image: linear-gradient(10deg, #d1d1d1 0%, #c3cfe2 100%);
 }
 
 /* SNACK BARS COLORS  */
 .back-color {
-    background-color: #F0F8FF;
-    color: #13274F;
+    background-color: #002D62;
+    color: #fff;
 }
 
 .back-color-err {

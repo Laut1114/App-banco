@@ -1,16 +1,18 @@
 // MODULOS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthInterceptorService } from './services/auth/auth-interceptor.service';
 
 // COMPONENTES
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { TransaccionesComponent } from './pages/transacciones/transacciones.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 // ANGULAR MATERIALS COMPONENTS
 import { MatButtonModule } from '@angular/material/button';
@@ -24,6 +26,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { RegisterComponent } from './pages/register/register.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTabsModule } from '@angular/material/tabs';
+
+
 
 
 @NgModule({
@@ -33,7 +38,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     UsuariosComponent,
     TransaccionesComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -50,9 +56,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatFormFieldModule,
     MatSelectModule,
     MatGridListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTabsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

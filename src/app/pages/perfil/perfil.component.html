@@ -1,0 +1,200 @@
+<mat-card class="mat-elevation-z8">
+    <div class="card-container">
+        <div class="container-img">
+            <img src="./../../../assets/mulyadi-kL4coQHVj_A-unsplash.jpg" alt="img-perfil" width="150">
+        </div>
+        <div class="container-info">
+            <p>Nombre del perfil</p>
+        </div>
+    </div>
+</mat-card>
+<br>
+<mat-tab-group class="mat-elevation-z8" mat-align-tabs="center">
+    <!-- TAB 1 -->
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">feed</mat-icon>
+            Datos del usuario
+        </ng-template>
+
+        <form class="info-form">
+            <table>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Id del usuario</mat-label>
+                            <input matInput disabled value="">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Nombre/s:</mat-label>
+                            <input matInput disabled value="">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Apellido:</mat-label>
+                            <input matInput disabled value="">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Email:</mat-label>
+                            <input matInput disabled value="">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Rol:</mat-label>
+                            <input matInput disabled value="">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Permisos de Usuario:</mat-label>
+                            <input matInput disabled value="">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Es Staff:</mat-label>
+                            <input matInput disabled value="">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Es root:</mat-label>
+                            <input matInput disabled value="">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Ultimo Ingreso:</mat-label>
+                            <input matInput disabled value="">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Fecha registro:</mat-label>
+                            <input matInput disabled value="">
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </mat-tab>
+
+    <!-- TAB 2 -->
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">edit_note</mat-icon>
+            Editar datos
+        </ng-template>
+
+        <form [formGroup]="formUser" class="info-form">
+            <table>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-icon style="color:aliceblue">cloud_upload</mat-icon>
+                            <label class="upload-button">
+                                <input type="file" accept=".jpeg,.jpg,.png" />
+                                Subir imagen
+                            </label>
+                            <input matInput hidden/>
+                            <mat-hint class="mat-form-field-hint-end">JPEG / JPG / PNG</mat-hint>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Nombre/s:</mat-label>
+                            <input matInput formControlName="first_name" required>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Apellido:</mat-label>
+                            <input matInput formControlName="last_name" required>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Rol:</mat-label>
+                            <mat-select formControlName="groups">
+                                <mat-option style="color: whitesmoke;" value="cliente">Cliente</mat-option>
+                                <mat-option style="color: whitesmoke;" value="empleado">Empleado</mat-option>
+                                <mat-option style="color: whitesmoke;" value="gerente">Gerente</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Email:</mat-label>
+                            <input matInput formControlName="email" placeholder="pat@example.com" required>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Password</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Permisos de Usuario:</mat-label>
+                            <mat-select formControlName="user_permissions" required>
+                                <mat-option style="color: whitesmoke;" value="usuario">Usuario</mat-option>
+                                <mat-option style="color: whitesmoke;" value="invitado">Invitado</mat-option>
+                                <mat-option style="color: whitesmoke;" value="admin">Administrador</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Es Staff:</mat-label>
+                            <mat-select formControlName="is_staff" [value]="false" required>
+                                <mat-option style="color: whitesmoke;" value="true">Si</mat-option>
+                                <mat-option style="color: whitesmoke;" value="false">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Es root:</mat-label>
+                            <mat-select formControlName="is_root" [value]="false" required>
+                                <mat-option style="color: whitesmoke;" value="true">Si</mat-option>
+                                <mat-option style="color: whitesmoke;" value="false">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div *ngIf="formUser.invalid; else formValid">
+            <button mat-raised-button style="width: 100%; background-color: #2c3968; color: rgba(255, 255, 255, 0.37);" disabled>Actualizar Datos</button>
+        </div>
+        <ng-template #formValid>
+            <button mat-raised-button style="width: 100%; background-color: #F0F8FF; color: #2c3968;" routerLink="/perfil">Actualizar Datos</button>
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>
+<br>
+<div class="container">
+    <button mat-raised-button routerLink="/home">Volver</button>
+</div>

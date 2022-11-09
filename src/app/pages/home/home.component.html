@@ -1,27 +1,68 @@
 <div class="toolbar"></div>
+
+<div class="header">
+    <h2>Hola {{username}}</h2>
+    <button mat-mini-fab style="background-color: #002D62; color: #F0F8FF;"
+        aria-label="Example icon button with a menu icon" routerLink="/perfil">
+        <mat-icon>person</mat-icon>
+    </button>
+</div>
+
 <div class="spacer"></div>
-<mat-card class="mat-elevation-z8">
-    <mat-card-title>Usuarios</mat-card-title>
-    <mat-card-subtitle>Ingresar a usuarios</mat-card-subtitle>
-    <mat-card-actions align="end">
-        <div class="container-buttons-card">
-            <button mat-flat-button style="color: #F0F8FF;" routerLink="/usuarios" [queryParams]="{op: '1'}">Lista de usuarios</button>
-            <button mat-flat-button style="color: #F0F8FF;" routerLink="/usuarios" [queryParams]="{op: '2'}">Buscar usuario</button>
-            <button mat-flat-button style="color: #7cb342;" routerLink="/usuarios" [queryParams]="{op: '3'}">Agregar usuario</button>
-            <button mat-flat-button style="color: #ffc107;" routerLink="/usuarios" [queryParams]="{op: '4'}">Actualizar datos del usuario</button>
-            <button mat-flat-button style="color: #ff0000;" routerLink="/usuarios" [queryParams]="{op: '5'}">Eliminar usuario</button>
-        </div>
-    </mat-card-actions>
-</mat-card>
-<div class="spacer"></div>
-<mat-card class="mat-elevation-z8">
-    <mat-card-title>Transacciones</mat-card-title>
-    <mat-card-subtitle>Ingresar a transacciones</mat-card-subtitle>
-    <mat-card-actions align="end">
-        <div class="container-buttons-card">
-            <button mat-flat-button style="color: #F0F8FF;" routerLink="/transacciones" [queryParams]="{op: '1'}">Lista de transacciones</button>
-            <button mat-flat-button style="color: #7cb342;" routerLink="/transacciones" [queryParams]="{op: '2'}">Nueva transacción</button>
-            <button mat-flat-button style="color: #ffc107;" routerLink="/transacciones" [queryParams]="{op: '3'}">Buscar transacción</button>
-        </div>
-    </mat-card-actions>
-</mat-card>
+
+<div class="container">
+    <div class="item-a">
+        <mat-card class="mat-elevation-z8">
+            <mat-card-title>Usuarios</mat-card-title>
+            <mat-card-subtitle>Ingresar a usuarios</mat-card-subtitle>
+            <mat-card-actions align="end">
+                <div class="container-buttons-card">
+                    <button mat-flat-button style="color: #F0F8FF;" routerLink="/usuarios" [queryParams]="{op: '1'}">Lista de usuarios</button>
+                    <button mat-flat-button style="color: #F0F8FF;" routerLink="/usuarios" [queryParams]="{op: '2'}">Buscar usuario</button>
+                    <button mat-flat-button style="color: #7cb342;" routerLink="/usuarios" [queryParams]="{op: '3'}">Agregar usuario</button>
+                    <button mat-flat-button style="color: #ffc107;" routerLink="/usuarios" [queryParams]="{op: '4'}">Actualizar datos del usuario</button>
+                    <button mat-flat-button style="color: #ff0000;" routerLink="/usuarios" [queryParams]="{op: '5'}">Eliminar usuario</button>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div class="item-b">
+        <mat-card class="mat-elevation-z8">
+            <mat-card-title>Historial</mat-card-title>
+            <mat-card-subtitle>Ingresar a historial</mat-card-subtitle>
+            <mat-card-actions align="end">
+                <div class="container-buttons-card">
+                    <button mat-flat-button style="color: #F0F8FF;" routerLink="">Ver historial</button>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div class="item-c">
+        <mat-card class="mat-elevation-z8">
+            <mat-card-title>Transacciones</mat-card-title>
+            <mat-card-subtitle>Ingresar a transacciones</mat-card-subtitle>
+            <mat-card-actions align="end">
+                <div class="container-buttons-card">
+                    <button mat-flat-button style="color: #F0F8FF;" routerLink="/transacciones" [queryParams]="{op: '1'}">Lista de transacciones</button>
+                    <button mat-flat-button style="color: #7cb342;" routerLink="/transacciones" [queryParams]="{op: '2'}">Nueva transacción</button>
+                    <button mat-flat-button style="color: #ffc107;" routerLink="/transacciones" [queryParams]="{op: '3'}">Buscar transacción</button>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div class="item-d">
+        <mat-card class="mat-elevation-z8">
+            <mat-card-title>Salir</mat-card-title>
+            <mat-card-subtitle>Cerrar la sesión del usuario</mat-card-subtitle>
+            <mat-card-actions align="end">
+                <div class="container-buttons-card">
+                    <button mat-flat-button style="color: #F0F8FF;" routerLink="/">Cerrar Sesión</button>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+</div>

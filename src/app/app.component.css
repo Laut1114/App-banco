@@ -1,72 +1,51 @@
-:host {
-    font-family: monospace;
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.toolbar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 8px 0;
+.logo {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-left: 10%;
 }
 
-p {
-    margin: 0;
+.logo span {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.github-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-right: 10%;
+}
+
+#github-buttons {
+    background-image: linear-gradient(to right, #ECE9E6 0%, #ECE9E6  51%, #FFFFFF  100%)
 }
 
 .spacer {
-    flex: 1;
-}
-
-.toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-    margin-left: 14px;
-    font-weight: 600;
-}
-
-.toolbar a:hover,
-.toolbar a:focus {
-    background: rgba(0, 0, 0, .4);
-}
-
-#logo {
-    margin: 0 16px;
+    height: 8%;
 }
 
 .content {
-    margin: 120px auto 32px;
-    padding: 0 16px;
-    max-width: 70%;
+    padding: 0 10% 0 10%;
 }
 
-svg.material-icons {
-    height: 24px;
-    width: auto;
-}
-
-svg.material-icons:not(:last-child) {
-    margin-right: 8px;
-}
-
-svg#clouds {
+/* svg#clouds {
     position: fixed;
     bottom: -160px;
     left: 0px;
     z-index: -10px;
     width: 1920px;
     height: 35%;
-    opacity: 0.4;
-}
+    opacity: 0.8;
+} */

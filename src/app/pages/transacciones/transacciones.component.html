@@ -1,6 +1,6 @@
 <!-------------------------------------------------------------------------------- OPCION 1 - LISTAR TRASANCCIONES --------------------------------------------------------------------------------->
 <div *ngIf="opcion[0] == '1'">
-    <p style="color: #F0F8FF; font-weight: bold; font-size: larger;">Lista de transacciones</p>
+    <p style="color: #002D62; font-weight: bold; font-size: larger; font-family: 'Courier New', Courier, monospace;">Lista de transacciones</p>
     <br>
     <mat-table [dataSource]="transacciones" class="mat-elevation-z8">
         <ng-container matColumnDef="id">
@@ -41,7 +41,7 @@
 
 <!-------------------------------------------------------------------------------- OPCION 2 - NUEVA TRANSACCIÓN ------------------------------------------------------------------------------------>
 <div *ngIf="opcion[0] == '2'">
-    <div class="example-form mat-elevation-z8" style="background-color: #474747; padding: 30px; border-radius: 12px;">
+    <div class="example-form mat-elevation-z8" style="background-color: #182848; padding: 30px; border-radius: 12px;">
         <p class="p-title">Nueva Transacción</p>
         <br>
         <form [formGroup]="formTransaccion">
@@ -105,7 +105,7 @@
 
 <!-------------------------------------------------------------------------------- OPCION 3 - BUSCAR TRANSACCIÓN ----------------------------------------------------------------------------------->
 <div *ngIf="opcion[0] == '3'">
-    <div class="example-form mat-elevation-z8" style="background-color: #474747; padding: 30px; border-radius: 12px;">
+    <div class="example-form mat-elevation-z8" style="background-color: #182848; padding: 30px; border-radius: 12px;">
         <p class="p-title">Buscar Trasacción</p>
         <br>
         <form [formGroup]="formTransaccion">

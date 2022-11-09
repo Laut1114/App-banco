@@ -32,6 +32,8 @@ export class LoginComponent implements OnInit {
   login(username: string, password: string) {
     this.loginService.login(username, password).subscribe({
       next: (res) => {
+        console.log(res);
+        
         // guardado de token en localStorage
         this._token = res.token;
         localStorage.setItem("token", this._token);

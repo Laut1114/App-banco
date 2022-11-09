@@ -1,6 +1,6 @@
 <!-------------------------------------------------------------------------------- OPCION 1 - LISTAR USUARIOS --------------------------------------------------------------------------------->
 <div *ngIf="opcion[0] == '1'">
-    <p style="color: #F0F8FF; font-weight: bold; font-size: larger;">Tabla de clientes</p>
+    <p style="color: #002D62; font-weight: bold; font-size: larger; font-family: 'Courier New', Courier, monospace;">Tabla de clientes</p>
     <br>
     <mat-table [dataSource]="usuarios" class="mat-elevation-z8">
         <ng-container matColumnDef="id">
@@ -57,7 +57,7 @@
 <!-------------------------------------------------------------------------------- OPCION 2 - LISTAR A USUARIO POR ID --------------------------------------------------------------------------------->
 <div *ngIf="opcion[0] == '2'">
     <!-- FORMULARIO PARA INGRESAR EL ID DEL USUARIO -->
-    <div class="mat-elevation-z8" style="background-color: #474747; padding: 30px; border-radius: 12px;">
+    <div class="mat-elevation-z8" style="background-color: #182848; padding: 30px; border-radius: 12px;">
         <p class="p-title">Busqueda de Usuario</p>
         <br>
         <form [formGroup]="formUser">
@@ -142,7 +142,7 @@
 
 <!-------------------------------------------------------------------------------- OPCION 3 - AGREGAR UN USUARIO --------------------------------------------------------------------------------->
 <div *ngIf="opcion[0] == '3'">
-    <div class="example-form mat-elevation-z8" style="background-color: #474747; padding: 30px; border-radius: 12px;">
+    <div class="example-form mat-elevation-z8" style="background-color: #182848; padding: 30px; border-radius: 12px;">
         <p class="p-title">Agregar un nuevo usuario</p>
         <br>
         <form [formGroup]="formUser">
@@ -232,7 +232,7 @@
 
 <!-------------------------------------------------------------------------------- OPCION 4 - ACTUALIZAR A UN USUARIO --------------------------------------------------------------------------------->
 <div *ngIf="opcion[0] == '4'">
-    <div class="example-form mat-elevation-z8" style="background-color: #474747; padding: 30px; border-radius: 12px;">
+    <div class="example-form mat-elevation-z8" style="background-color: #182848; padding: 30px; border-radius: 12px;">
         <p class="p-title">Actualizar usuario</p>
         <br>
         <form [formGroup]="formUser">
@@ -258,7 +258,11 @@
                     </mat-form-field>
                     <mat-form-field appearance="outline" style="width: 18%;">
                         <mat-label>Rol</mat-label>
-                        <input matInput placeholder="Cliente" formControlName="groups">
+                        <mat-select formControlName="groups">
+                            <mat-option style="color: whitesmoke;" value="cliente">Cliente</mat-option>
+                            <mat-option style="color: whitesmoke;" value="empleado">Empleado</mat-option>
+                            <mat-option style="color: whitesmoke;" value="gerente">Gerente</mat-option>
+                        </mat-select>
                     </mat-form-field>
                 </tr>
                 <tr>
@@ -322,7 +326,7 @@
 
 <!-------------------------------------------------------------------------------- OPCION 5 - ELIMINAR A UN USUARIO ----------------------------------------------------------------------------------->
 <div *ngIf="opcion[0] == '5'">
-    <div class="example-form mat-elevation-z8" style="background-color: #474747; padding: 30px; border-radius: 12px;">
+    <div class="example-form mat-elevation-z8" style="background-color: #182848; padding: 30px; border-radius: 12px;">
         <p class="p-title">Eliminar un Usuario</p>
         <form [formGroup]="formUser">
             <table class="example-full-width" cellspacing="1">
