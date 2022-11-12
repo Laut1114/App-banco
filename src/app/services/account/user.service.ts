@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { UserInterface } from '../../models/users';
 
 @Injectable({
@@ -13,8 +13,8 @@ export class UserService {
     return this.http.get<any>('http://localhost:3000/api/accounts');
   }
 
-  getUser(id: number) {
-    return this.http.get<any>(`http://localhost:3000/api/accounts/${id}`);
+  getUser(id?: number, username?: string) {
+    return this.http.get<any>(`http://localhost:3000/api/accounts/${[id, username]}`);
   }
 
   addUser(user: UserInterface) {

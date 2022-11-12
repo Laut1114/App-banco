@@ -38,8 +38,6 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   register(user: UserInterface) {
-    console.log(user);
-    
     this.registerService.addUser(user).subscribe({
       next: () => {
         this.snackBar.open("Usuario " + user.username + " registrado correctamente, por favor inicie sesión", undefined, {

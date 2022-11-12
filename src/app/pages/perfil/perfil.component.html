@@ -4,7 +4,7 @@
             <img src="./../../../assets/mulyadi-kL4coQHVj_A-unsplash.jpg" alt="img-perfil" width="150">
         </div>
         <div class="container-info">
-            <p>Nombre del perfil</p>
+            <p>{{username}}</p>
         </div>
     </div>
 </mat-card>
@@ -23,19 +23,19 @@
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Id del usuario</mat-label>
-                            <input matInput disabled value="">
+                            <input matInput disabled value="{{user[0].id}}">
                         </mat-form-field>
                     </td>
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Nombre/s:</mat-label>
-                            <input matInput disabled value="">
+                            <input matInput disabled value="{{user[0].first_name}}">
                         </mat-form-field>
                     </td>
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Apellido:</mat-label>
-                            <input matInput disabled value="">
+                            <input matInput disabled value="{{user[0].last_name}}">
                         </mat-form-field>
                     </td>
                 </tr>
@@ -43,13 +43,13 @@
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Email:</mat-label>
-                            <input matInput disabled value="">
+                            <input matInput disabled value="{{user[0].email}}">
                         </mat-form-field>
                     </td>
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Rol:</mat-label>
-                            <input matInput disabled value="">
+                            <input matInput disabled value="{{user[0].groups}}">
                         </mat-form-field>
                     </td>
                 </tr>
@@ -57,19 +57,19 @@
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Permisos de Usuario:</mat-label>
-                            <input matInput disabled value="">
+                            <input matInput disabled value="{{user[0].user_permissions}}">
                         </mat-form-field>
                     </td>
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Es Staff:</mat-label>
-                            <input matInput disabled value="">
+                            <input matInput disabled value="{{user[0].is_staff}}">
                         </mat-form-field>
                     </td>
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Es root:</mat-label>
-                            <input matInput disabled value="">
+                            <input matInput disabled value="{{user[0].is_root}}">
                         </mat-form-field>
                     </td>
                 </tr>
@@ -77,13 +77,13 @@
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Ultimo Ingreso:</mat-label>
-                            <input matInput disabled value="">
+                            <input matInput disabled value="{{user[0].last_login}}">
                         </mat-form-field>
                     </td>
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Fecha registro:</mat-label>
-                            <input matInput disabled value="">
+                            <input matInput disabled value="{{user[0].date_joined}}">
                         </mat-form-field>
                     </td>
                 </tr>

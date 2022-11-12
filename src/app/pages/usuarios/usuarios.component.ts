@@ -60,7 +60,7 @@ export class UsuariosComponent implements OnInit {
   }
 
   getUser(id: number) {
-    this.userService.getUser(id).subscribe(res => {
+    this.userService.getUser(id, undefined).subscribe(res => {
       if (res.result.length < 1) {
         this.snackBar.open("No existe un usuario con el id: " + id, undefined, {
           duration: 6000,
