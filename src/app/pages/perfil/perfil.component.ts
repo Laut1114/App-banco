@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserInterface } from 'src/app/models/users';
 import { UserService } from 'src/app/services/account/user.service';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import { UploadService } from 'src/app/services/uploads/upload.service';
 
 @Component({
   selector: 'app-perfil',
@@ -21,7 +22,9 @@ export class PerfilComponent implements OnInit {
   formUser!: FormGroup;
   hide: boolean = true;
 
-  constructor(private fb: FormBuilder, private userService: UserService, private snackBar: MatSnackBar) {
+  file: File | undefined;
+
+  constructor(private fb: FormBuilder, private userService: UserService, private upload: UploadService, private snackBar: MatSnackBar) {
     this.formUser = this.fb.group({
       id: [''],
       username: [''],
@@ -48,8 +51,19 @@ export class PerfilComponent implements OnInit {
       }
 
       return this.user = res.result;
-      
+
     });
+  }
+
+  handleFileInput(event: any) {
+    this.file = event.target.files[0];
+
+    console.log(this.file);
+    
+  }
+
+  userAvatar() {
+    this.upload.updAvatar(this.username!, this.file!)
   }
 
 }

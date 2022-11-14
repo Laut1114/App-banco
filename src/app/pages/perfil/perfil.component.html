@@ -1,7 +1,7 @@
 <mat-card class="mat-elevation-z8">
     <div class="card-container">
-        <div class="container-img">
-            <img src="./../../../assets/mulyadi-kL4coQHVj_A-unsplash.jpg" alt="img-perfil" width="150">
+        <div class="container-img" *ngIf="user[0].avatar != ''">
+            <img src="{{user[0].avatar}}" alt="img-perfil" width="150">
         </div>
         <div class="container-info">
             <p>{{username}}</p>
@@ -105,7 +105,7 @@
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-icon style="color:aliceblue">cloud_upload</mat-icon>
                             <label class="upload-button">
-                                <input type="file" accept=".jpeg,.jpg,.png" />
+                                <input type="file" accept=".jpeg,.jpg,.png" (change)="handleFileInput($event)" />
                                 Subir imagen
                             </label>
                             <input matInput hidden/>
