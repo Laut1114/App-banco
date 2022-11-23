@@ -58,8 +58,6 @@ export class TransaccionesComponent implements OnInit {
   
   nuevaTrasaccion(transaccion: TrasnsaccionesInterface) {
 
-    console.log(transaccion);
-
     this.transactionService.newTrasaction(transaccion).subscribe({
       next: () => {
         this.snackBar.open("Transacción realizada correctamente", undefined, {
@@ -78,6 +76,7 @@ export class TransaccionesComponent implements OnInit {
         });
       }
     });
+    
   }
   
   getTransaccionId(id: number) {

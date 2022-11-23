@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserInterface } from 'src/app/models/users';
 import { UserService } from 'src/app/services/account/user.service';
@@ -27,7 +27,9 @@ export class PerfilComponent implements OnInit {
   constructor(private fb: FormBuilder, private userService: UserService, private upload: UploadService, private snackBar: MatSnackBar) {
     this.formUser = this.fb.group({
       id: [''],
+      avatar: [''],
       username: [''],
+      saldo: [''],
       first_name: [''],
       last_name: [''],
       groups: ['cliente'],
@@ -49,7 +51,7 @@ export class PerfilComponent implements OnInit {
       if (res.result.length < 1) {
         console.log("No se trajo los datos del usuario");
       }
-
+      
       return this.user = res.result;
 
     });
@@ -63,7 +65,7 @@ export class PerfilComponent implements OnInit {
   }
 
   userAvatar() {
-    this.upload.updAvatar(this.username!, this.file!)
+    this.upload.updAvatar(this.username!, this.file!);
+    this.snackBar.open('Se actualizaron los datos', undefined);
   }
-
 }

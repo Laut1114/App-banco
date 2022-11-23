@@ -27,9 +27,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { RegisterComponent } from './pages/register/register.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
-
-
-
+import { BooleanPipe } from './models/pipeBoolean/boolean.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +37,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     TransaccionesComponent,
     LoginComponent,
     RegisterComponent,
-    PerfilComponent
+    PerfilComponent,
+    BooleanPipe,
   ],
   imports: [
     BrowserModule,

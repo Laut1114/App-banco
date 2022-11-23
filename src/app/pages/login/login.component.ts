@@ -31,11 +31,9 @@ export class LoginComponent implements OnInit {
 
   login(username: string, password: string) {
 
-    localStorage.setItem('username', username);
-
     this.loginService.login(username, password).subscribe({
       next: (res) => {
-        console.log(res);
+        localStorage.setItem('username', username);
         
         // guardado de token en localStorage
         this._token = res.token;
@@ -50,8 +48,8 @@ export class LoginComponent implements OnInit {
 
         this.router.navigate(['/home']);
       },
-      error: () => {
-        this.snackBar.open("Datos incorrectos", "Cerrar", {
+      error: (err) => {
+        this.snackBar.open(`${err.error.msg}`, "Cerrar", {
           horizontalPosition: this.snackBarHorizontal,
           verticalPosition: this.snackBarVertical,
           panelClass: ['back-color-err']

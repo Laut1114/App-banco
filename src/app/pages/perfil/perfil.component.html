@@ -1,6 +1,6 @@
 <mat-card class="mat-elevation-z8">
     <div class="card-container">
-        <div class="container-img" *ngIf="user[0].avatar != ''">
+        <div class="container-img" *ngIf="user[0].avatar != null">
             <img src="{{user[0].avatar}}" alt="img-perfil" width="150">
         </div>
         <div class="container-info">
@@ -24,6 +24,12 @@
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Id del usuario</mat-label>
                             <input matInput disabled value="{{user[0].id}}">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Saldo</mat-label>
+                            <input matInput disabled value="{{user[0].saldo | currency}}">
                         </mat-form-field>
                     </td>
                     <td>
@@ -63,13 +69,13 @@
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Es Staff:</mat-label>
-                            <input matInput disabled value="{{user[0].is_staff}}">
+                            <input matInput disabled value="{{user[0].is_staff | boolean}}">
                         </mat-form-field>
                     </td>
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Es root:</mat-label>
-                            <input matInput disabled value="{{user[0].is_root}}">
+                            <input matInput disabled value="{{user[0].is_root | boolean}}">
                         </mat-form-field>
                     </td>
                 </tr>
@@ -77,13 +83,13 @@
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Ultimo Ingreso:</mat-label>
-                            <input matInput disabled value="{{user[0].last_login}}">
+                            <input matInput disabled value="{{user[0].last_login | date: 'd/M/y - h:mm:ss a'}}">
                         </mat-form-field>
                     </td>
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Fecha registro:</mat-label>
-                            <input matInput disabled value="{{user[0].date_joined}}">
+                            <input matInput disabled value="{{user[0].date_joined | date: 'd/M/y - h:mm:ss a'}}">
                         </mat-form-field>
                     </td>
                 </tr>
@@ -116,14 +122,20 @@
                 <tr>
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Saldo:</mat-label>
+                            <input type="number" matInput formControlName="saldo" placeholder="$" required>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Nombre/s:</mat-label>
-                            <input matInput formControlName="first_name" required>
+                            <input type="text" matInput formControlName="first_name" required>
                         </mat-form-field>
                     </td>
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Apellido:</mat-label>
-                            <input matInput formControlName="last_name" required>
+                            <input type="text" matInput formControlName="last_name" required>
                         </mat-form-field>
                     </td>
                 </tr>
@@ -141,7 +153,7 @@
                     <td>
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Email:</mat-label>
-                            <input matInput formControlName="email" placeholder="pat@example.com" required>
+                            <input type="email" matInput formControlName="email" placeholder="email@example.com" required>
                         </mat-form-field>
                     </td>
                     <td>

@@ -20,7 +20,7 @@
 
         <ng-container matColumnDef="cantidad">
             <mat-header-cell *matHeaderCellDef>Cantidad</mat-header-cell>
-            <mat-cell *matCellDef="let row">$ {{row.cantidad}}</mat-cell>
+            <mat-cell *matCellDef="let row">{{row.cantidad | currency}}</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="fecha_realizada">
@@ -90,8 +90,7 @@
         </div>
         <ng-template #formValid>
             <div class="container-button-valid">
-                <button mat-raised-button (click)="nuevaTrasaccion(formTransaccion.value)" routerLink="/home"> Realizar
-                    Trasacción </button>
+                <button mat-raised-button (click)="nuevaTrasaccion(formTransaccion.value)" routerLink="/home"> Realizar Trasacción </button>
             </div>
         </ng-template>
     </div>
