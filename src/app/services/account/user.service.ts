@@ -21,7 +21,7 @@ export class UserService {
     return this.http.post<any>('http://localhost:3000/api/accounts/add', user);
   }
 
-  updateUser(id: number, user: UserInterface) {
+  updateUser(id: number, user: any) {
     return this.http.put<any>(`http://localhost:3000/api/accounts/update/${id}`, user);
   }
 

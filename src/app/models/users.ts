@@ -2,7 +2,7 @@ export interface UserInterface {
     id: number;
     avatar?: string;
     username: string;
-    saldo: string;
+    saldo?: string;
     first_name?: string;
     last_name?: string;
     email?: string;

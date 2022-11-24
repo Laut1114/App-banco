@@ -8,15 +8,15 @@ export class UploadService {
 
   constructor(private http: HttpClient) { }
 
-  subirArchivo(file: File) {
-    return this.http.post<any>('http://localhost:3000/api/uploads/', file);
+  subirArchivo(files: any) {
+    return this.http.post<any>('http://localhost:3000/api/uploads/', files);
   }
 
-  getImg(id?: number, username?: string) {
-    return this.http.get<any>(`http://localhost:3000/api/uploads/${[id, username]}`)
+  getImg(username: string) {
+    return this.http.get<any>(`http://localhost:3000/api/uploads/${username}`)
   }
 
-  updAvatar(username: string, file: File) {
-    return this.http.put<any>(`http://localhost:3000/api/uploads/${username}`, file)
+  userAvatar(username: string, files: File) {
+    return this.http.put<any>(`http://localhost:3000/api/uploads/${username}`, files)
   }
 }

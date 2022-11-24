@@ -50,8 +50,8 @@
                     <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 10px;">
                         <mat-label>Origén de la Trasacción</mat-label>
                         <mat-select formControlName="origen" required>
-                            <mat-option *ngFor="let user of userTransaction" [value]="user.username"
-                                style="color: whitesmoke;"> {{user.username}} </mat-option>
+                            <mat-option [value]="userTransaction[0]?.username"
+                                style="color: whitesmoke;">Cuenta: {{userTransaction[0]?.username}} - Saldo Disp.: {{userTransaction[0]?.saldo | currency}} </mat-option>
                         </mat-select>
                         <mat-hint>*Selecione la cuenta de origén</mat-hint>
                     </mat-form-field>
@@ -60,7 +60,7 @@
                     <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 10px;">
                         <mat-label>Destino de la Trasacción</mat-label>
                         <mat-select formControlName="destino" required>
-                            <mat-option *ngFor="let user of userTransaction" [value]="user.username"
+                            <mat-option *ngFor="let user of usersTransaction" [value]="user.username"
                                 style="color: whitesmoke;">{{user.username}}</mat-option>
                         </mat-select>
                         <mat-hint>*Seleccione la cuenta de destino</mat-hint>
@@ -69,7 +69,7 @@
                 <tr>
                     <mat-form-field appearance="outline" style="padding-right: 8px; width: 50%;">
                         <mat-label>Cantidad</mat-label>
-                        <input matInput type="number" min="1" formControlName="cantidad" placeholder="$300" required>
+                        <input matInput type="number" min="1" max="{{userTransaction[0]?.saldo}}" formControlName="cantidad" placeholder="$300" required>
                         <mat-hint>*Debe ser una cantidad mayor a 0</mat-hint>
                     </mat-form-field>
                     <mat-form-field appearance="outline" style="width: 49%;">
